@@ -14,7 +14,7 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    const sections = ['hero', 'about', 'skill', 'proj', 'exp'];
+    const sections = ['hero', 'about', 'skills', 'work', 'projects'];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -50,9 +50,9 @@ const NavBar = () => {
   const navItems = [
     { id: 'hero', label: '/' },
     { id: 'about', label: 'About' },
-    { id: 'skill', label: 'Skills' },
-    { id: 'proj', label: 'Projects' },
-    { id: 'exp', label: 'Works' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'work', label: 'Works' },
+    { id: 'projects', label: 'Projects' },
   ];
 
   return (
@@ -65,8 +65,9 @@ const NavBar = () => {
               <a
                 key={item.id}
                 className={`px-3 py-2 lg:px-4 lg:py-2 rounded-full text-sm lg:text-base relative no-underline duration-300 ease-in ${
-                  activeSection === item.id ? 'bg-[#59FF45] text-black' : 'text-white bg-transparent'
+                  activeSection === item.id ? 'text-black' : 'text-white bg-transparent'
                 }`}
+                style={activeSection === item.id ? { backgroundColor: '#59FF45' } : {}}
                 href={`#${item.id}`}
                 onClick={(e) => {
                   e.preventDefault();
@@ -85,31 +86,42 @@ const NavBar = () => {
         <button
           className="text-white bg-[#2e2e2e] p-1 rounded-md"
           onClick={() => setIsMenuOpen((prev) => !prev)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Backdrop */}
       {isMenuOpen && (
-        <div className="md:hidden fixed top-0 right-0 h-screen w-2/3 bg-black/95 p-6 shadow-lg z-[1000000] space-y-6 text-end pt-16">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              className={`block px-4 py-3 rounded-full text-center text-2xl font-[Anton] ${
-                activeSection === item.id ? 'bg-[#59FF45] text-black' : 'text-white'
-              }`}
-              href={`#${item.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(item.id);
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
+        <div 
+          className="md:hidden fixed inset-0 bg-black/50 z-[999999]"
+          onClick={() => setIsMenuOpen(false)}
+        />
       )}
+
+      {/* Mobile Menu */}
+      <div className={`md:hidden fixed top-0 right-0 h-screen w-2/3 bg-black/95 p-6 shadow-lg z-[1000000] space-y-6 text-end pt-16 transform transition-transform duration-300 ${
+        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        {navItems.map((item) => (
+          <a
+            key={item.id}
+            className={`block px-4 py-3 rounded-full text-center text-2xl font-[Anton] ${
+              activeSection === item.id ? 'text-black' : 'text-white'
+            }`}
+            style={activeSection === item.id ? { backgroundColor: '#59FF45' } : {}}
+            href={`#${item.id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(item.id);
+            }}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
     </div>
   );
 };

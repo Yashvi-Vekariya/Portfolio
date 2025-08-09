@@ -14,15 +14,13 @@ function About() {
                         <div className='border-[#59FF45] border-b-[4px]'>
                             <h1 className='font-[Anton] text-4xl sm:text-6xl md:text-[6rem] lg:text-9xl text-white pb-4'>Data Analyst</h1>
                         </div>
-                        <div className='pt-8 pb-8'>
-                            <p className='text-lg sm:text-xl md:text-2xl text-white p-2'>I specialize in transforming raw data into actionable insights, helping businesses make informed, data-driven decisions. From exploratory data analysis to predictive modeling, I thrive on solving real-world problems through numbers, patterns, and intelligent algorithms.</p>
-                            <p className='text-lg sm:text-xl md:text-2xl text-white p-2'>Beyond the numbers, I'm also a proud contributor to the open-source community. I believe in the power of collaboration and sharing knowledge, and I actively give back by contributing to projects that help others grow and innovate.</p>
-                            <p className='text-lg sm:text-xl md:text-2xl text-white p-2'>I'm always on the lookout for opportunities where I can merge analytical thinking with creative problem-solving whether it's building smarter models, optimizing workflows, or simply learning something new every day.</p>
+                        <div className='pt-8 pb-8 '>
+                            <p className='text-lg font-[poppins] sm:text-lg md:text-2xl text-white p-2'>Data Analytics and Product Strategy expert with proven success in building scalable data ecosystems, predictive models, and Generative AI solutions across cloud platforms including BigQuery, Snowflake, and AWS. Skilled in ML Ops, KPI engineering, A/B testing, and customer behavior analytics to deliver measurable growth and data monetization. Proficient in modern data stacks, ETL/ELT pipelines, and predictive intelligence frameworks that accelerate time-to-insight and improve operational efficiency. Experienced in AI integration, LLM automation, and data storytelling that enables enterprise digital transformation and informed decision-making. Focuses on aligning product roadmaps with data monetization strategies to deliver measurable business impact and competitive advantage.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="md:flex justify-center items-center h-3/4 selection:bg-[#59FF45] selection:text-black">
+            {/* <div className="md:flex justify-center items-center h-3/4 selection:bg-[#59FF45] selection:text-black">
                 <div className='font-[Anton] sm:gap-10 sm:flex flex-col sm:flex-row w-full sm:w-10/12 sm:m-10 justify-center items-center'>
                     <div className='sm:m-4 sm:p-0 pl-2 sm:pl-5 text-xl sm:text-2xl md:text-3xl text-white text-center sm:text-left mb-4 sm:mb-0'>Stay Updated With My Projects</div>
                     <div className='sm:m-4 mt-4 flex flex-wrap justify-center sm:justify-start gap-6 sm:gap-10'>
@@ -40,7 +38,7 @@ function About() {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

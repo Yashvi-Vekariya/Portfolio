@@ -4,7 +4,7 @@ import WorkCard from './WorkCard'
 function Work() {
     return (
         <>
-            <div id='exp' className="md:flex justify-center pt-8 sm:pt-14 items-center h-3/4 selection:bg-[#59FF45] selection:text-black">
+            <div id='work' className="md:flex justify-center pt-8 sm:pt-14 items-center h-3/4 selection:bg-[#59FF45] selection:text-black">
                 <div className='font-[Anton] w-full sm:m-10 flex flex-col items-center'>
                     <h1 className='text-white text-center pb-6 sm:pb-10 text-4xl sm:text-5xl md:text-7xl'>Internships & Experience</h1>
                     <WorkCard 
