@@ -1,12 +1,12 @@
 import React from 'react'
-import path from '../assets/Yashviii_CV.pdf'
+import path from '../assets/Yashvi_Resume.pdf'
 import { Github, Linkedin, Mail, User } from 'lucide-react';
 
 function Hero() {
     const handleDownload = () => {
         const link = document.createElement('a');
         link.href = path;
-        link.download = 'YASHVI_CV.pdf';
+        link.download = 'Yashvi_Resume.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
